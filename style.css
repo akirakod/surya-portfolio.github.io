@@ -23,6 +23,14 @@ body {
     font-weight: 700; /* Bold font weight for emphasis */
     margin-bottom: 10px; /* Space below the heading */
 }
+#one {
+    font-family: 'Dancing Script', cursive;
+}
+
+#one h2 {
+    font-family: 'Dancing Script', cursive;
+}
+
 
   header {
     background-color: #333;
