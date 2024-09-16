@@ -3,14 +3,31 @@ body {
     margin: 0;
     padding: 0;
   }
-  /* Style for About Me section */
+
 #one {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Dancing Script', cursive; /* Cursive font for a stylish look */
+    font-size: 18px; /* Font size for readability */
+    line-height: 1.8; /* Increased line height for better readability */
+    color: #555; /* Slightly lighter color for a sophisticated look */
+    padding: 30px; /* Increased padding for a more spacious feel */
+    border-left: 5px solid #444; /* Stylish left border for emphasis */
+    margin-bottom: 30px; /* Margin at the bottom for spacing */
+    background-color: #f9f9f9; /* Light background color for a clean appearance */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 #one h2 {
-    font-family: 'Dancing Script', cursive;
+    font-size: 28px; /* Larger font size for the section heading */
+    font-weight: 700; /* Bold font weight for emphasis */
+    margin-bottom: 15px; /* Space below the heading */
 }
+
+#one p {
+    font-weight: 400; /* Regular font weight for the paragraph text */
+    margin: 0; /* Remove default margin */
+}
+
 
 
   header {
