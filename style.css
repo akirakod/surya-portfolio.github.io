@@ -3,7 +3,27 @@ body {
     margin: 0;
     padding: 0;
   }
-  
+  /* Style for About Me section */
+#one {
+    font-family: 'Georgia', serif; /* Elegant serif font for a professional look */
+    font-size: 18px; /* Slightly larger font size for readability */
+    line-height: 1.6; /* Increased line height for better readability */
+    color: #333; /* Darker color for better contrast */
+    padding: 20px; /* Add some padding around the text */
+    border-left: 5px solid #333; /* Stylish left border for emphasis */
+    margin-bottom: 20px; /* Margin at the bottom for spacing */
+}
+
+#one p {
+    font-weight: 400; /* Regular font weight for the paragraph text */
+}
+
+#one h2 {
+    font-size: 24px; /* Larger font size for the section heading */
+    font-weight: 700; /* Bold font weight for emphasis */
+    margin-bottom: 10px; /* Space below the heading */
+}
+
   header {
     background-color: #333;
     color: #fff;
