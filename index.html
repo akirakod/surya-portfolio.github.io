@@ -90,11 +90,11 @@
 						<p>I’d love to hear from you! Whether you have questions, feedback, or just want to connect, feel free to reach out. You can contact me through the following channels:</p>
 						<div class="row">
 							<div class="col-8 col-12-small">
-								<form method="post" action="#">
+								<form method="post" action="#" autocomplete="on">
 									<div class="row gtr-uniform gtr-50">
-										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>
-										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4"></textarea></div>
+										<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" autocomplete="name" /></div>
+										<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" autocomplete="email" /></div>
+										<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4" autocomplete="off"></textarea></div>
 									</div>
 								</form>
 								<ul class="actions">
@@ -143,6 +143,13 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
-			<script src="index.js"></script>
+			<script>
+				$(document).ready(function() {
+					// Clear input field after form submission
+					$("form").on("submit", function() {
+						$(this).find("input[type='text'], input[type='email'], textarea").val("");
+					});
+				});
+			</script>
 	</body>
 </html>
