@@ -1,15 +1,20 @@
-document.querySelectorAll('.work-item a').forEach(function(anchor, index) {
-  console.log(`Processing anchor #${index} with href: ${anchor.href}`);
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.work-item a').forEach(function(anchor, index) {
+    console.log(`Anchor #${index} href: ${anchor.getAttribute('href')}`);
 
-  anchor.addEventListener('click', function(event) {
-    console.log(`Clicked on link: ${this.href}`);
+    anchor.addEventListener('click', function(event) {
+      const hrefValue = this.getAttribute('href');
+      console.log(`Clicked on link: ${hrefValue}`);
 
-    // Open the link in a new tab
-    window.open(this.href, '_blank');
-    console.log('Opened the link in a new tab.');
+      if (hrefValue) {
+        window.open(hrefValue, '_blank');
+        console.log('Opened the link in a new tab.');
+      } else {
+        console.log('No valid href found.');
+      }
 
-    // Prevent the default behavior to avoid the current page navigation
-    event.preventDefault();
-    console.log('Default behavior prevented.');
+      event.preventDefault();
+      console.log('Default behavior prevented.');
+    });
   });
 });
