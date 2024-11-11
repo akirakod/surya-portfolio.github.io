@@ -2087,7 +2087,6 @@ input, select, textarea {
 				text-decoration: none;
 				top: 50%;
 				white-space: nowrap;
-				z-index: 1;
 			}
 
 			.image.thumb:hover:after {
@@ -2097,7 +2096,6 @@ input, select, textarea {
 			.image.thumb:hover:before {
 				background: url("images/overlay.png"), url("images/overlay.png");
 				opacity: 1.0;
-				pointer-events: none;
 			}
 
 		.image img {
