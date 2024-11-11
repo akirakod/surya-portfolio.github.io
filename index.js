@@ -15,12 +15,22 @@
 //     });
 // });
 
-document.querySelectorAll('.image.thumb').forEach(function(image) {
-  image.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevent default link action
+// document.querySelectorAll('.image.thumb').forEach(function(image) {
+//   image.addEventListener('click', function(event) {
+//     event.preventDefault(); // Prevent default link action
 
+//     // Open the link in a new tab
+//     const link = this.closest('a').href; // Get the link associated with the image
+//     window.open(link, '_blank'); // Open the link in a new tab
+//   });
+// });
+
+document.querySelectorAll('.work-item a').forEach(function(anchor) {
+  anchor.addEventListener('click', function(event) {
     // Open the link in a new tab
-    const link = this.closest('a').href; // Get the link associated with the image
-    window.open(link, '_blank'); // Open the link in a new tab
+    window.open(this.href, '_blank');
+    
+    // Prevent the default behavior to avoid the current page navigation
+    event.preventDefault();
   });
 });
