@@ -1,15 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Select all anchor tags that wrap the images and text
-    const thumbnails = document.querySelectorAll('.work-item a');
+    // Select all elements with the class 'image fit thumb'
+    const imageLinks = document.querySelectorAll('.image.fit.thumb');
 
-    thumbnails.forEach(thumbnail => {
-        // When the user clicks anywhere inside the anchor tag (image or text), the link should open in a new tab
-        thumbnail.addEventListener('click', function(event) {
-            const url = thumbnail.getAttribute('href');
-            if (url) {
-                // Open the link in a new tab (this is the default behavior for <a> tag)
-                window.open(url, '_blank');
-            }
+    // Loop through all the image links and add click event listeners
+    imageLinks.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            // Prevent the default anchor behavior (don't navigate directly on click)
+            event.preventDefault();
+
+            // Open the URL in a new tab
+            const url = link.getAttribute('href');
+            window.open(url, '_blank');
         });
     });
 });
