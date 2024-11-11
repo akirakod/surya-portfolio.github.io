@@ -1,22 +1,16 @@
-// Assuming your JavaScript file is targeting work items or using a lightbox library
 document.addEventListener('DOMContentLoaded', function() {
-    // Select all work-item links
-    const workItems = document.querySelectorAll('.work-item a');
+    const thumbnails = document.querySelectorAll('.work-item a'); // Select all anchor tags within the work-item articles
 
-    workItems.forEach(item => {
-        // Check if the item has 'target="_blank"' to identify external links
-        if (item.getAttribute('target') === '_blank') {
-            item.addEventListener('click', function(event) {
-                // Prevent any lightbox or default behavior if using a lightbox library
-                event.stopPropagation();
-            });
-        }
+    thumbnails.forEach(thumbnail => {
+        // Add a click event to open the link when the image or the "view" button is clicked
+        thumbnail.addEventListener('click', function(event) {
+            const url = thumbnail.getAttribute('href');
+            if (url) {
+                // Open the link in a new tab
+                window.open(url, '_blank');
+            }
+            // Prevent the default behavior of clicking the anchor
+            event.preventDefault(); 
+        });
     });
 });
-
-// If using a lightbox library, make sure to initialize it with conditions
-// Example using lightbox conditional initialization (if applicable)
-const lightboxOptions = {
-    selector: '.image:not([target="_blank"])', // Initialize lightbox only for items without target="_blank"
-    // Other lightbox options as needed
-};
