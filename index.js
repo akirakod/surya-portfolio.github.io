@@ -1,20 +1,25 @@
-document.addEventListener('DOMContentLoaded', function() {
-document.querySelectorAll('.work-item a').forEach(function(anchor, index) {
-  // Log the href attribute to verify it's being read correctly
-  console.log(`Anchor #${index} href: ${anchor.getAttribute('href')}`);
+document.addEventListener("DOMContentLoaded", function() {
+  // Select only anchor tags within .work-item articles
+  document.querySelectorAll('.work-item a').forEach(function(anchor, index) {
+    // Ensure the anchor has a valid href attribute
+    const hrefValue = anchor.getAttribute('href');
+    console.log(`Anchor #${index} href: ${hrefValue}`);
 
-  anchor.addEventListener('click', function(event) {
-    const hrefValue = this.getAttribute('href');
-    console.log(`Clicked on link: ${hrefValue}`);
+    // Check if href exists and is not empty
+    if (hrefValue && hrefValue !== '') {
+      // Attach the click event to each valid link
+      anchor.addEventListener('click', function(event) {
+        console.log(`Clicked on link: ${hrefValue}`);
 
-    if (hrefValue) {
-      // Open the link in a new tab without preventing default behavior
-      window.open(hrefValue, '_blank');
-      console.log('Opened the link in a new tab.');
+        // Open the link in a new tab
+        window.open(hrefValue, '_blank');
+        console.log('Opened the link in a new tab.');
+
+        // Prevent default anchor behavior (since we already opened it in a new tab)
+        event.preventDefault();
+      });
     } else {
-      console.log('No valid href found.');
+      console.log(`No valid href found for anchor #${index}.`);
     }
   });
-});
-
 });
